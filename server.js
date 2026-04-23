@@ -7,7 +7,9 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 
 app.use("/api", require("./routes/auth"));
 app.use("/api/items", require("./routes/items"));
